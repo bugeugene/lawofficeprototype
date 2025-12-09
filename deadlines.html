@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <title>Document</title>
+</head>
+<body>
+    <nav class="navbar navbar-dark bg-info">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="deadlines.html"><i class="bi bi-buildings"></i> Law Office</a>
+        </div>
+    </nav>
+
+    <div class="container-fluid">
+        <div class="row">
+            <nav class="col-md-2 d-none d-md-block bg-light sidebar py-3 vh-100">
+                <ul class="nav flex-column">
+                    <li>
+                        <h5 class="text-muted">Menu</h5>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="dashboard.html">
+                        <i class="bi bi-speedometer2 me-2"></i>Dashboard</a>
+                    </li>
+                </ul>
+            </nav>
+
+            <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4 py-4">
+
+                <div class="d-flex justify-content-between align-items-center pb-2 mb-3 border-bottom">
+                    <h1 class="h2">Deadlines & Hearings</h1>
+
+                    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#newDeadlineModal">
+                        <i class="bi bi-clock-fill me-2"></i>New Deadline
+                    </button>
+                </div>
+
+                <div class="card">
+                    <div class="card-body p-0">
+                        <table class="table">
+                            <thead class="table-light">
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Case</th>
+                                    <th>Event</th>
+                                    <th>Date</th>
+                                    <th>Type</th>
+                                    <th>Responsible</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>DL-001</td>
+                                    <td>C-2025-0012</td>
+                                    <td>Response Deadline</td>
+                                    <td>2025-11-25</td>
+                                    <td>Filing</td>
+                                    <td>James Clark</td>
+                                </tr>
+                                <tr>
+                                    <td>HL-010</td>
+                                    <td>C-2025-0012</td>
+                                    <td>Case Management Hearing</td>
+                                    <td>2025-12-05</td>
+                                    <td>Hearing</td>
+                                    <td>James Clark</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </main>
+        </div>
+    </div>
+
+    <div class="modal fade" id="newDeadlineModal" tabindex="-1" aria-labelledby="newDeadlineLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+
+                <div class="modal-header">
+                    <h5 class="modal-title" id="newDeadlineLabel"><i class="bi bi-calendar-plus me-2"></i>Add New Deadline</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+
+                <div class="modal-body">
+                    <form>
+
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <label class="form-label"><i class="bi bi-folder2-open me-1"></i>Case ID</label>
+                                <input type="text" class="form-control" placeholder="C-2025-XXXX">
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label"><i class="bi bi-card-checklist me-2"></i>Event Type</label>
+                                <select class="form-select">
+                                    <option selected disabled>Select Type</option>
+                                    <option>Filing</option>
+                                    <option>Hearing</option>
+                                    <option>Submission</option>
+                                    <option>Other</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label"><i class="bi bi-journal-text me-2"></i>Event Title</label>
+                            <input type="text" class="form-control" placeholder="e.g. Motion Filing, Oral Argument">
+                        </div>
+
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <label class="form-label"><i class="bi bi-calendar-event me-2"></i>Date</label>
+                                <input type="date" class="form-control">
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label"><i class="bi bi-person-fill me-2"></i>Responsible Person</label>
+                                <input type="text" class="form-control" placeholder="Assigned Staff or Lawyer">
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" data-bs-dismiss="modal"><i class="bi bi-x-circle me-2"></i>Cancel</button>
+                    <button class="btn btn-primary" data-bs-dismiss="modal"><i class="bi bi-save me-2"></i>Save Deadline</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</body>
+</html>

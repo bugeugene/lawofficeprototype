@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <title>Documents</title>
+</head>
+<body>
+    <nav class="navbar navbar-dark bg-info">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="documents.html"><i class="bi bi-buildings"></i> Law Office</a></div>
+    </nav>
+    <div class="container-fluid">
+        <div class="row">
+            <nav class="col-md-2 d-none d-md-block bg-light sidebar py-3">
+                <ul class="nav flex-column">
+                    <li>
+                        <h5 class="text-muted">Menu</h5>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="dashboard.html">
+                        <i class="bi bi-speedometer2 me-2"></i>Dashboard</a>
+                    </li>
+                </ul>
+            </nav>
+            <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4 py-4">
+                <div class="d-flex justify-content-between align-items-center pb-2 mb-3 border-bottom">
+                    <h1 class="h2">Legal Document Archiver</h1>
+                    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#uploadDoc">
+                        <i class="bi bi-upload"></i> Upload Document</button>
+                </div>
+
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <form class="row g-3">
+                            <div class="col-md-3">
+                                <label class="form-label">Filter: Type</label>
+                                <select class="form-select">
+                                    <option>All</option>
+                                    <option>Contract</option>
+                                    <option>Pleading</option>
+                                    <option>Evidence</option>
+                                </select>
+                            </div>
+                            <div class="col-md-3">
+                                <label class="form-label">Status</label>
+                                <select class="form-select">
+                                    <option>All</option>
+                                    <option>Draft</option>
+                                    <option>Final</option>
+                                </select>
+                            </div>
+                            <div class="col-md-3">
+                                <label class="form-label">Uploader</label>
+                                <select class="form-select">
+                                    <option>All</option>
+                                    <option>Jane</option>
+                                    <option>Mark</option>
+                                </select>
+                            </div>
+                            <div class="col-md-3 d-flex align-items-end">
+                                <button class="btn btn-outline-secondary w-100">Apply</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">Documents by Case</div>
+                    <div class="card-body p-0">
+                        <table class="table table-hover mb-0">
+                            <thead class="table-light">
+                                <tr>
+                                    <th>Doc ID</th>
+                                    <th>Case</th>
+                                    <th>Title</th>
+                                    <th>Type</th>
+                                    <th>Uploader</th>
+                                    <th>Date</th>
+                                    <th>Versions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>D-5001</td>
+                                    <td>C-2025-0012</td>
+                                    <td>Contract_Acme_Globex.pdf</td>
+                                    <td>Contract</td>
+                                    <td>Mark</td>
+                                    <td>2025-11-18</td>
+                                    <td><a class="btn btn-sm btn-outline-primary" href="case_view.html">View</a></td>
+                                </tr>
+                                <tr>
+                                    <td>D-5002</td>
+                                    <td>C-2025-0012</td>
+                                    <td>Pleadings_Response.docx</td>
+                                    <td>Pleading</td>
+                                    <td>James</td>
+                                    <td>2025-11-20</td>
+                                    <td><a class="btn btn-sm btn-outline-primary" href="case_view.html">View</a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="card mt-3">
+                    <div class="card-header">Document Versions</div>
+                    <div class="card-body p-0">
+                        <table class="table table-sm mb-0">
+                            <thead class="table-light">
+                                <tr>
+                                    <th>Version</th>
+                                    <th>Doc ID</th>
+                                    <th>Author</th>
+                                    <th>Date</th>
+                                    <th>Notes</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>v1</td>
+                                    <td>D-5001</td>
+                                    <td>Mark</td>
+                                    <td>2025-11-15</td>
+                                    <td>Initial</td>
+                                </tr>
+                                <tr>
+                                    <td>v2</td>
+                                    <td>D-5001</td>
+                                    <td>James</td>
+                                    <td>2025-11-18</td>
+                                    <td>Redacted</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </main>
+        </div>
+    </div>
+
+    <div class="modal fade" id="uploadDoc" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+
+                <div class="modal-header">
+                    <h5 class="modal-title"><i class="bi bi-file-earmark-arrow-up me-2"></i>Upload Document</h5>
+                    <button class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+
+                <div class="modal-body">
+                    <form>
+                        <div class="row g-3 mb-3">
+                            <div class="col-md-6">
+                                <label class="form-label"><i class="bi bi-folder2-open me-1"></i>Case</label>
+                                <input class="form-control" placeholder="Enter Case ID">
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label"><i class="bi bi-journal-text me-1"></i>Document Title</label>
+                                <input class="form-control" placeholder="Enter Document Title">
+                            </div>
+                        </div>
+
+                        <div class="row g-3 mb-3">
+                            <div class="col-md-6">
+                                <label class="form-label"><i class="bi bi-tags me-1"></i>Type</label>
+                                <select class="form-select">
+                                    <option>Contract</option>
+                                    <option>Pleading</option>
+                                    <option>Evidence</option>
+                                </select>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label"><i class="bi bi-file-earmark-arrow-up me-1"></i>File</label>
+                                <input class="form-control" type="file">
+                                <div class="form-text">Mock only</div>
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label"><i class="bi bi-pencil-square me-1"></i>Version Notes</label>
+                            <textarea class="form-control" rows="2" placeholder="Enter notes about this version"></textarea>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" data-bs-dismiss="modal"><i class="bi bi-x-circle me-1"></i>Close</button>
+                    <button class="btn btn-primary" data-bs-dismiss="modal"><i class="bi bi-save me-1"></i>Save Document</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</body>
+</html>
